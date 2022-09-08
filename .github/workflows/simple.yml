@@ -14,4 +14,5 @@ jobs:
           npm -v
       - name: raspakovati paket
       run: |
-        
+       curl -L https://github.com/Vrana030/actions-test/blob/main/paketi/config-lint_Linux_x86_64.tar.gz | tar xz -C /usr/local/bin config-lint
+       chmod +rx /usr/local/bin/config-lint
