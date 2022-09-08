@@ -12,3 +12,6 @@ jobs:
         run: |
           node -v
           npm -v
+      - name: raspakovati paket
+      run: |
+        
