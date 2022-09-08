@@ -17,8 +17,7 @@ jobs:
           node -v
           npm -v
 
-#      - name: raspakovati paket
-#        run: |
-#          "$GITHUB_WORKSPACE/actions-test/paketi/config-lint_Linux_x86_64.tar.gz"
-#          tar xzf /usr/local/bin/paket/config-lint_Linux_x86_64.tar.gz config-lint
-#          chmod +rx config-lint
+      - name: raspakovati paket
+        run: |
+          tar xzf /home/runner/work/actions-test/actions-test/paketi/config-lint_Linux_x86_64.tar.gz config-lint
+          chmod +rx config-lint
