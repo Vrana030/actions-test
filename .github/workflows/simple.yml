@@ -11,6 +11,7 @@ jobs:
 
       - name: Install terraform linter
         run: |
-          tar xzf -C /usr/local/bin $GITHUB_WORKSPACE/paketi/config-lint_Linux_x86_64.tar.gz config-lint
+          cd /usr/local/bin
+          tar xzf $GITHUB_WORKSPACE/paketi/config-lint_Linux_x86_64.tar.gz config-lint
           chmod +rx /usr/local/bin/config-lint
           config-lint -h
