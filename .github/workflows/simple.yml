@@ -6,16 +6,19 @@ jobs:
   run-shell-command:
     runs-on: ubuntu-latest
     steps:
+
+      - uses: actions/checkout@v3
+
       - name: echo command
         run: echo "Hello World"
+
       - name: multiline script
         run: |
           node -v
           npm -v
-      - name: raspakovati paket
-        run: |
-          mkdir /usr/local/bin/paket
-          cd /usr/local/bin/paket
-          curl -L "$GITHUB_WORKSPACE/actions-test/blob/main/paketi/config-lint_Linux_x86_64.tar.gz"
-          tar xzf /usr/local/bin/paket/config-lint_Linux_x86_64.tar.gz config-lint
-          chmod +rx config-lint
+
+#      - name: raspakovati paket
+#        run: |
+#          "$GITHUB_WORKSPACE/actions-test/paketi/config-lint_Linux_x86_64.tar.gz"
+#          tar xzf /usr/local/bin/paket/config-lint_Linux_x86_64.tar.gz config-lint
+#          chmod +rx config-lint
