@@ -1,8 +1,8 @@
 name: GCP over terraform
 
 on: [push]
+jobs:
 
-job:
   GCP-login:
     steps:
     - id: 'auth'
@@ -16,7 +16,6 @@ job:
     - name: 'Use gcloud CLI'
       run: 'gcloud info'
 
-jobs:
   install-terraform:
     runs-on: ubuntu-latest
     container:
