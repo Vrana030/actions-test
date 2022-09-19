@@ -23,7 +23,7 @@ jobs:
 
       - name: Setup terraform
         run: |
-          cd "$GITHUB_WORKSPACE/gcp
+          cd "$GITHUB_WORKSPACE/gcp"
           terraform init
           terraform validate main.tf
 
