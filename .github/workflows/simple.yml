@@ -6,7 +6,7 @@ jobs:
   install-terraform:
     runs-on: ubuntu-latest
       container:
-        image: terraform:latest
+        image: hashicorp/terraform:latest
 
     steps:
 #      - uses: actions/checkout@v3
