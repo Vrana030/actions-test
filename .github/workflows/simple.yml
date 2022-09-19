@@ -20,28 +20,25 @@ jobs:
     - name: 'Use gcloud CLI'
       run: 'gcloud info'
 
-  install-terraform:
-
-    steps:
-      - name: 'Setup env'
-        uses: 'actions/checkout@v3'
+    - name: 'Setup env'
+      uses: 'actions/checkout@v3'
       
-      - name: 'Check terraform'
-        run: |
-          terraform -v
+    - name: 'Check terraform'
+      run: |
+        terraform -v
 
-      - name: 'Setup terraform'
-        run: |
-          cd "$GITHUB_WORKSPACE/gcp"
-          terraform init
+    - name: 'Setup terraform'
+      run: |
+        cd "$GITHUB_WORKSPACE/gcp"
+        terraform init
 
-      - name: 'Run terraform'
-        run: |
-          cd "$GITHUB_WORKSPACE/gcp"
-          terraform plan
-          terraform apply -auto-approve
+    - name: 'Run terraform'
+      run: |
+        cd "$GITHUB_WORKSPACE/gcp"
+        terraform plan
+        terraform apply -auto-approve
     
-      - name: 'Destroy terraform'
-        run: |
-          cd "$GITHUB_WORKSPACE/gcp"
-          terraform destroy -auto-approve
+    - name: 'Destroy terraform'
+      run: |
+        cd "$GITHUB_WORKSPACE/gcp"
+        terraform destroy -auto-approve
