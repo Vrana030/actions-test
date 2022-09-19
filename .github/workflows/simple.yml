@@ -34,7 +34,7 @@ jobs:
       
       - name: 'Set up Cloud SDK'
         run: |
-          gcloud --quiet auth activate-service-account github@electric-wave-315708.iam.gserviceaccount.com --key-file -"${{ secrets.GCP_CREDENTIALS }}"
+          gcloud --quiet auth activate-service-account github@electric-wave-315708.iam.gserviceaccount.com --key-file -${{ secrets.GCP_CREDENTIALS }}
 
       - name: 'Use gcloud CLI'
         run: 'gcloud info'
