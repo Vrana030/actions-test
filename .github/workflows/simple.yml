@@ -5,8 +5,8 @@ on: [push]
 jobs:
   install-terraform:
     runs-on: ubuntu-latest
-      container:
-        image: hashicorp/terraform:latest
+    container:
+      image: hashicorp/terraform:latest
 
     steps:
 #      - uses: actions/checkout@v3
