@@ -32,3 +32,8 @@ jobs:
           cd "$GITHUB_WORKSPACE/gcp"
           terraform plan
           terraform apply -auto-approve
+    
+      - name: Destroy terraform
+        run: |
+          cd "$GITHUB_WORKSPACE/gcp"
+          terraform destroy -auto-approve

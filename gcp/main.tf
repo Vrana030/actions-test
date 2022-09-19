@@ -13,7 +13,7 @@ provider "google" {
 }
 
 resource "google_storage_bucket" "auto-expire" {
-  name          = "auto-expiring-bucket"
+  name          = "nikola-test-bucket-gcp"
   location      = "US"
   force_destroy = true
 
