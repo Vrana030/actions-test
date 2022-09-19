@@ -19,6 +19,7 @@ jobs:
       run: 'gcloud info'
 
   install-terraform:
+    needs: GCP-login
     runs-on: ubuntu-latest
     container:
       image: hashicorp/terraform:latest
