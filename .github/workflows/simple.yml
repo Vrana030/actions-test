@@ -5,8 +5,6 @@ jobs:
 
   GCP-login:
     runs-on: ubuntu-latest
-    container:
-      image: hashicorp/terraform:latest
 
     steps:
     - name: 'Check GCP'
@@ -21,6 +19,9 @@ jobs:
       run: 'gcloud info'
 
   install-terraform:
+    runs-on: ubuntu-latest
+    container:
+      image: hashicorp/terraform:latest
 
 
     steps:
