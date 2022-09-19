@@ -5,6 +5,8 @@ jobs:
 
   GCP-login:
     runs-on: ubuntu-latest
+    container:
+      image: hashicorp/terraform:latest
 
     steps:
     - name: 'Check GCP'
@@ -19,10 +21,6 @@ jobs:
       run: 'gcloud info'
 
   install-terraform:
-    needs: GCP-login
-    runs-on: ubuntu-latest
-    container:
-      image: hashicorp/terraform:latest
 
     steps:
       - name: 'Setup env'
@@ -40,7 +38,6 @@ jobs:
       - name: 'Run terraform'
         run: |
           cd "$GITHUB_WORKSPACE/gcp"
-          gcloud auth activate-service-account github@electric-wave-315708.iam.gserviceaccount.com --key-file="/home/runner/work/actions-test/actions-test/gha-creds-a322a55c24d5e61b.json"
           terraform plan
           terraform apply -auto-approve
     
