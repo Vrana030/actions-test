@@ -25,6 +25,7 @@ jobs:
         run: |
           cd "$GITHUB_WORKSPACE/gcp"
           terraform init
+          pwd
           terraform validate main.tf
 
 #      - name: Run terraform
