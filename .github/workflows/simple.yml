@@ -25,9 +25,9 @@ jobs:
         run: |
           cd "$GITHUB_WORKSPACE/gcp"
           terraform init
-          terraform plan
-          pwd
-          ll
 
-#      - name: Run terraform
-#        run: |
+
+      - name: Run terraform
+        run: |
+          terraform plan
+          terraform apply
