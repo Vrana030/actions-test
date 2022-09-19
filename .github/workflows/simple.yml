@@ -15,7 +15,7 @@ jobs:
     - name: 'Checkout'
       uses: 'actions/checkout@v3'
      
-    - name: 'Check GCP'
+    - id: 'auth'
       uses: 'google-github-actions/auth@v0'
       with:
         credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
@@ -25,9 +25,6 @@ jobs:
 
     - name: 'Use gcloud CLI'
       run: 'gcloud info'
-
-    - name: 'Setup env'
-      uses: 'actions/checkout@v3'
       
     - name: 'Check terraform'
       run: |
