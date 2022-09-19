@@ -9,8 +9,8 @@ terraform {
 
 provider "google" {
   project = "electric-wave-315708"
-  credentials = "./service-account.json"
 }
+
 
 resource "google_storage_bucket" "auto-expire" {
   name          = "nikola-test-bucket-gcp"
