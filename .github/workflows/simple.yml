@@ -1,17 +1,15 @@
-name: Shell Commands
+name: GCP over terraform
 
 on: [push]
 
 jobs:
   run-shell-command:
-    runs-on: ubuntu-latest
+    runs:
+      using: 'docker'
+      image: 'hashicorp/terraform'
     steps:
-      
-      - uses: actions/checkout@v3
+#      - uses: actions/checkout@v3
 
-      - name: Install terraform linter
-        run: |
-          cd /usr/local/bin
-          tar xzf $GITHUB_WORKSPACE/paketi/config-lint_Linux_x86_64.tar.gz config-lint
-          chmod +rx /usr/local/bin/config-lint
-          config-lint -h
+      - name: Check terraform
+        run: terraform -v
+
