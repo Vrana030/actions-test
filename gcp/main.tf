@@ -8,7 +8,6 @@ terraform {
 }
 
 provider "google" {
-  project = "electric-wave-315708"
 }
 
 
