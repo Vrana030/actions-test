@@ -3,23 +3,23 @@ name: GCP over terraform
 on: [push]
 jobs:
 
-#  GCP-login:
-#    runs-on: ubuntu-latest
+  GCP-login:
+    runs-on: ubuntu-latest
 
-#    steps:
-#    - name: 'Check GCP'
-#      uses: 'google-github-actions/auth@v0'
-#      with:
-#        credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+    steps:
+    - name: 'Check GCP'
+      uses: 'google-github-actions/auth@v0'
+      with:
+        credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
 
-#    - name: 'Set up Cloud SDK'
-#      uses: 'google-github-actions/setup-gcloud@v0'
+    - name: 'Set up Cloud SDK'
+      uses: 'google-github-actions/setup-gcloud@v0'
 
-#    - name: 'Use gcloud CLI'
-#      run: 'gcloud info'
+    - name: 'Use gcloud CLI'
+      run: 'gcloud info'
 
   install-terraform:
-#    needs: GCP-login
+    needs: GCP-login
     runs-on: ubuntu-latest
     container:
       image: hashicorp/terraform:latest
@@ -27,17 +27,6 @@ jobs:
     steps:
       - name: 'Setup env'
         uses: 'actions/checkout@v3'
-        
-      - uses: 'google-github-actions/auth@v0'
-        with:
-          credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
-      
-      - name: 'Set up Cloud SDK'
-        run: |
-          gcloud --quiet auth activate-service-account github@electric-wave-315708.iam.gserviceaccount.com --key-file -${{ secrets.GCP_CREDENTIALS }}
-
-      - name: 'Use gcloud CLI'
-        run: 'gcloud info'
       
       - name: 'Check terraform'
         run: |
