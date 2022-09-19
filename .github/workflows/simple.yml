@@ -29,5 +29,6 @@ jobs:
 
       - name: Run terraform
         run: |
+          cd "$GITHUB_WORKSPACE/gcp"
           terraform plan
           terraform apply
