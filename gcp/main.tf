@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "google" {
-  project = "My First Project"
+  project = "electric-wave-315708"
   credentials = "./service-account.json"
 }
 
