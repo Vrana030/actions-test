@@ -5,14 +5,17 @@ jobs:
 
   GCP-login:
     runs-on: ubuntu-latest
+
     container:
       image: hashicorp/terraform:latest
       
-      uses: 'actions/checkout@v3'
-    
+  
     steps:
-    - name: 'Check GCP'
 
+    - name: 'Checkout'
+      uses: 'actions/checkout@v3'
+     
+    - name: 'Check GCP'
       uses: 'google-github-actions/auth@v0'
       with:
         credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
