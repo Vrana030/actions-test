@@ -8,7 +8,8 @@ terraform {
 }
 
 provider "google" {
-  # Configuration options
+  project = "My First Project"
+  credentials = "./service-account.json"
 }
 
 resource "google_storage_bucket" "auto-expire" {
