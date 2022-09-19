@@ -25,14 +25,17 @@ jobs:
       image: hashicorp/terraform:latest
 
     steps:
+      - name: 'Setup env'
       - uses: 'actions/checkout@v3'
       - uses: 'google-github-actions/auth@v0'
-    
-      - name: 'Set up Cloud SDK'
-        uses: 'google-github-actions/setup-gcloud@v0'
         with:
           credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
-  
+      
+      - name: 'Set up Cloud SDK'
+        uses: 'google-github-actions/setup-gcloud@v0'
+
+      - name: 'Use gcloud CLI'
+        run: 'gcloud info'
       
       - name: 'Check terraform'
         run: |
