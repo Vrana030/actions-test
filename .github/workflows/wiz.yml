@@ -15,8 +15,7 @@ jobs:
     steps:
       - name: 'Wiz login'
         run: |
-          cd /cli
-          ls
+          docker run wiziocli.azurecr.io/wizcli:latest
 #          wizcli auth --id=$WIZ_IAC_SCAN_ID --secret=$WIZ_IAC_SCAN_SECRET
 
 #      - name: 'Check wizcli'
