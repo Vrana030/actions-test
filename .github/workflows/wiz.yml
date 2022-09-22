@@ -1,5 +1,9 @@
 name: Wiz instalation
 
+env:
+ WIZ_IAC_SCAN_ID: ${{ secrets.WIZ_IAC_SCAN_ID }}
+ WIZ_IAC_SCAN_SECRET: ${{ secrets.WIZ_IAC_SCAN_SECRET }}
+
 on: [push]
 jobs:
 
@@ -9,6 +13,12 @@ jobs:
       image: wiziocli.azurecr.io/wizcli:latest
 
     steps:
+      - name: 'Wiz login'
+        run: |
+          auth --id=$WIZ_IAC_SCAN_ID --secret=$WIZ_IAC_SCAN_SECRET
+
+
+    steps:
       - name: 'Check wizcli'
         run: |
-          docker run wiziocli.azurecr.io/wizcli:latest version
+          version
