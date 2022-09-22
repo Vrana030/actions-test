@@ -9,9 +9,6 @@ jobs:
       image: wiziocli.azurecr.io/wizcli:latest
 
     steps:
-      - name: 'Setup env'
-        uses: 'actions/checkout@v3'
-      
       - name: 'Check wizcli'
         run: |
-          version
+          docker run wiziocli.azurecr.io/wizcli:latest version
