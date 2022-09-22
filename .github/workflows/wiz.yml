@@ -17,8 +17,6 @@ jobs:
         run: |
           auth --id=$WIZ_IAC_SCAN_ID --secret=$WIZ_IAC_SCAN_SECRET
 
-
-    steps:
       - name: 'Check wizcli'
         run: |
           version
