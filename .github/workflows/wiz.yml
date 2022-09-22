@@ -1,0 +1,17 @@
+name: Wiz instalation
+
+on: [push]
+jobs:
+
+  install-wiz:
+    runs-on: ubuntu-latest
+    container:
+      image: wiziocli.azureecr.io/wizcli:latest
+
+    steps:
+      - name: 'Setup env'
+        uses: 'actions/checkout@v3'
+      
+      - name: 'Check wizcli'
+        run: |
+          wizcli version
