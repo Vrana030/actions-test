@@ -6,7 +6,7 @@ jobs:
   install-wiz:
     runs-on: ubuntu-latest
     container:
-      image: wiziocli.azureecr.io/wizcli:latest
+      image: wiziocli.azurecr.io/wizcli:latest
 
     steps:
       - name: 'Setup env'
