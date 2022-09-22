@@ -14,4 +14,4 @@ jobs:
       
       - name: 'Check wizcli'
         run: |
-          wizcli version
+          version
